@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title> <?php echo $title ;?></title>
+  
+  <meta name = "description" content ="<?php echo $title ;?>" />
+<meta name ="keywords" content ="<?php echo $theTags;?>"  />
+<meta name ="author" content ="andy brookes"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <link  rel="stylesheet" type="text/css" href="ui/css/bootstrap.css" />
+      <link  rel="stylesheet" type="text/css" href="ui/css/custom.css" />
+  
+
+
+</head>
+<body>
+<header class="container-fluid text-center">
+<!--<img   class = "pull-left"           src = "<?php echo $home;?>ui/images/tuxlogo.png">-->
+  <h1 class ="grandhotel"><br><medium> </medium></h1>
+</header>
+
+
+
+
+<!-- start of nav -->
+<nav class="navbar navbar-new" role="navigation">
+    <div class="container-fluid">
+        <!-- logo -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+	   
+        
+            <a class="navbar-brand" href="#">  http://ghanalug.org     </a></div>
+        <!-- menu -->
+        <div class="collapse navbar-collapse navbar-right" id="navbar1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="<?php echo $home;?>/">Home</a></li>
+             <li> <a href="<?php echo $home;?>/pending"></a></li>
+	          
+                <li><a href="<?php echo $home;?>/bTitles">Blog</a></li>
+                <li><a href="<?php echo $home;?>/contact_us">contact</a></li>
+                <li><a href="<?php echo $home;?>/about_us"></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--end of nav-->
+
+
+<div class="container-fluid text-center">    
+ 
+ 
+	 <div class="row content">
+    
+    
+    
+		<div class="col-sm-12 text-left"> 
+		
+		
+				
+				<!--content here-->
+			
+  <?php 
+  
+  foreach($result as $value)
+  {
+	  
+      echo $value['slug']."<br>";
+  } 
+  
+  
+   ?>
+				
+			
+			<!--end content-->	
+				</div>
+				
+				
+				</div><!--end of row content-->
+        </div><!-- end of container-->
+	
+
+
+
+
+
+
+
+
+<div class ="clearfix"></div>
+<footer class="container-fluid text-center">
+  <div class ="footer">
+  <a href ="http://www.twitter.com/ghanalug"><img class = "img-responsive pull-right"  alt ="twitter link" src = "<?php echo $home; ?>ui/images/twitter.gif" width = "30px" hspace ="10px" ></a>
+   
+  <a href = "http://fatfreeframework.com"> <img class = "img-responsive pull-right" src = "ui/images/fatfree.png" width ="60px"hspace ="10px" ></a> 
+  
+  <a href = "http://freehosting.host"> <img class = "img-responsive pull-right" src = "ui/images/freehostinghost.png" width ="130px"hspace ="10px" ></a> 
+  
+  <p>
+ some page    </p>
+
+
+ </div>
+</footer>
+<script  src="ui/js/jquery.min.js"></script>	
+<script  src="ui/js/bootstrap.min.js"></script>	
+
+<script src="ui/js/jquery-ui.js"></script>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

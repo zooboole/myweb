@@ -1,0 +1,325 @@
+
+@import url("font-face.css");
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-new {
+/* background-color: #855ecd;*/
+
+    background-color: #9976da;
+    border-color: #9976da;
+}
+
+.navbar-new .navbar-brand,
+.navbar-new .navbar-brand:hover,
+.navbar-new .navbar-brand:focus {
+    color: #FFF;
+}
+
+.navbar-new .navbar-nav > li > a {
+    color: #FFF;
+}
+
+.navbar-new .navbar-nav > li > a:hover,
+.navbar-new .navbar-nav > li > a:focus {
+    background-color: #855ecd;
+}
+
+.navbar-new .navbar-nav > .active > a,
+.navbar-new .navbar-nav > .active > a:hover,
+.navbar-new .navbar-nav > .active > a:focus {
+    color: #FFF;
+   background-color: #0FA6A1;
+  
+    
+    
+}
+
+.navbar-new .navbar-text {
+    color: #FFF;
+}
+
+.navbar-new .navbar-toggle {
+  
+    border-color: #9976da;
+    
+}
+
+.navbar-new .navbar-toggle:hover,
+.navbar-new .navbar-toggle:focus {
+   /*  background-color: #0FA6A1;*/
+     background-color: #9976da;
+    
+    
+}
+
+.navbar-new .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}
+
+
+
+ /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #9976da;
+      color: white;
+      padding: 15px;
+    }
+    div.footer
+    {
+    background-color: #9976da;
+      color: white;
+      padding-top: 10px;
+      min-height:80px;
+      text-align:center;
+    }
+    
+    
+    
+    header {
+     
+
+    
+height:150px;
+margin-bottom:0px;
+margin-top:0px;
+background:url(../images/Tux4.png);
+background-size:cover;
+
+
+
+    }
+    
+   
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+div.col-xs-4, div.col-xs-5 
+{
+
+border: solid 2px black;
+border-radius:10px;
+
+
+}
+
+     div.col-xs-5   img 
+{
+width:100%
+height:auto;
+ 
+ text-align:center;
+}
+
+       div.col-xs-5         .btn:hover  
+
+{
+ background-color:orange;
+
+
+}
+
+
+
+
+div.shop   .btn ,div.shop2 .btn , div.selected  .btn, div.center-block .btn 
+ 
+ {
+ 
+ position:absolute;
+ bottom:0px;
+ left:33%;
+ background-color:yellow;
+ text-align:center;
+
+  }
+
+div.col-xs-12 .btn
+{
+background-color:yellow;
+ text-align:center;
+}
+ 
+
+div.shop .btn:hover ,div.shop2 .btn:hover, div.selected .btn:hover , div.col-xs-12 .btn:hover
+
+{
+ background-color:orange;
+}
+
+
+div.shop
+{
+border: solid 2px black;
+border-radius:5px;
+position:relative;
+width: 200px;
+height:220px;
+background-color:#cdc1e3;
+margin:5px;
+text-align:center;
+font-size:15px;
+
+/*word-wrap:break-word;*/
+/*text-overflow: ellipsis;*/
+}
+div.shop  img  
+{
+height:50%;
+width:auto;
+
+}
+
+div.shop2
+{
+border: solid 2px black;
+border-radius:5px;
+position:relative;
+width: 200px;
+height:250px;
+background-color:#cdc1e3;
+margin:5px;
+text-align:center;
+font-size:15px;
+
+/*word-wrap:break-word;*/
+/*text-overflow: ellipsis;*/
+}
+div.shop2  img  
+{
+height:35%;
+width:auto;
+margin-bottom:2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+select
+{
+
+
+position:absolute;
+bottom:30px;
+right:10px;
+
+
+
+}
+
+ 
+
+
+
+
+
+div.selected
+{
+position:relative;
+border: solid 2px black;
+border-radius:5px;
+position:relative;
+height:100%;
+width:auto;
+
+background-color:#cdc1e3;
+margin:5px;
+text-align:center;
+/*word-wrap:break-word;*/
+/*text-overflow: ellipsis;*/
+}
+
+
+
+
+
+
+
+
+.clear 
+
+{
+clear:both;
+}
+
+
+
+div.cart
+{
+position:relative;
+
+float:right;
+
+}
+div.cart p
+{
+position:absolute;
+bottom:2px;
+left:3px;
+
+font-size:14px;
+font-weight:bold;
+
+}
+
+
+
+
+
+
+.bottomaligned {position:absolute; bottom:0;  margin-bottom:7px; left:33%;}
+
+
+
+
+code {
+	background:#eee;
+}
+
+
+
+

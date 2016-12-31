@@ -1,0 +1,40 @@
+<div class="container-fluid text-center">    
+ 
+ 
+	 <div class="row content">
+    
+    
+  
+  
+		<div class="col-xs-12 text-left"> 
+		 <h2 class = "gondola">New Blog </h2>
+		
+				
+			<form role="form" action ="<?php echo $home;?>/newblog" method ="post" enctype="multipart/form-data" > 
+			
+			
+			
+			<div class="form-group"> 
+			<label for="name">title</label> 
+			 <input type="text" class="form-control" id="name" name ="title" placeholder="Enter Your Name Please" required ="true"> 
+			 </div>
+			 
+			 <div class="form-group"> 
+			 <label for="name">blog text</label> 
+			 <textarea class="form-control" id ="message" rows="3" cols ="24" name ="maintext" required ="true"  ></textarea>
+			  </div>
+			 
+			 
+			 <div class="form-group"> <label for="inputfile">File input</label> 
+		<input type="file" id="file" name= "file">
+		 <p class="help-block">browse for image on your PC</p> </div> 
+		 <button type="submit" class="btn btn-default">Submit</button>
+			
+				
+				
+				
+				</form>
+				</div><!-- div column-->
+				</div><!--end of row content-->
+        </div><!-- end of container-->
+	
