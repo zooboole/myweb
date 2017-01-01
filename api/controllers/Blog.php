@@ -52,7 +52,9 @@ class Blog
 					$a=	$web->receive(NULL,true,true );
 					$name = array_keys($a);
 					$this->imageFile =  $name[0];
-				    $this->imageSrcPath ="<img src = \"../" . $this->imageFile."\"   class = \"img-responsive pull-left \" hspace = \"10px\" vspace = \"10px\"    >";
+				$this->imageSrcPath=    "   <img src = \"../$this->imageFile\"   class = \"img-responsive pull-left \" hspace = \"10px\" vspace = \"10px\"    >          ";
+	  	         	  	           
+	  	          
 	  	           	$this->datetime =     date("Y-m-d h:i:sa");
 	           $stmt =     $this->connection->exec('INSERT into blog values (:Id,:title,:article,:slug,:imageSrc,:mydate)',array (':title'=>$this->theTitle,':article'=>$this->mainText,':slug'=>$this->slug,':imageSrc'=>$this->imageSrcPath,':mydate'=>$this->datetime));
 					if($stmt)
@@ -66,7 +68,14 @@ class Blog
 						{
 						echo "something went wrong";	
 						}
-				}				
+				
+				
+				
+				
+				}	
+				
+				
+					
 				}
 			   
           
