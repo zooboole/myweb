@@ -13,7 +13,7 @@ class Blog
 			protected $blogUrl;
 			protected $blogR;
 			protected $blogC;
-			
+			protected $keywords;//for metatags
 			 function beforeroute()
            {
 			          
@@ -44,19 +44,30 @@ class Blog
 					{
 					 
 					$this->connection = $f3->get('conn');
-					$this->theTitle =trim($f3->get('POST.title'));
+					
+				     $this->keywords= $f3->get('POST.keywords');
+				
+				
+				
+					$title = $f3->get('POST.title');
+					$this->theTitle =trim($title);
+					
 					$this->mainText = $f3->get('POST.maintext');
 				    $slimy = New Slug();
 				    $this->slug =$slimy->getSlug($this->theTitle);
 					$web = \Web::instance();
-					$a=	$web->receive(NULL,true,true );
+					$a =	$web->receive(NULL,true,true );
+					
+					
+					
 					$name = array_keys($a);
-					$this->imageFile =  $name[0];
-				$this->imageSrcPath=    "   <img src = \"../$this->imageFile\"   class = \"img-responsive pull-left \" hspace = \"10px\" vspace = \"10px\"    >          ";
-	  	         	  	           
-	  	          
+				 	$this->imageFile =  $name[0];
+					
+					
+					$this->imageSrcPath=    "   <img src = \"../$this->imageFile\"   class = \"img-responsive pull-left \" hspace = \"10px\" vspace = \"10px\"    >          ";
+				   
 	  	           	$this->datetime =     date("Y-m-d h:i:sa");
-	           $stmt =     $this->connection->exec('INSERT into blog values (:Id,:title,:article,:slug,:imageSrc,:mydate)',array (':title'=>$this->theTitle,':article'=>$this->mainText,':slug'=>$this->slug,':imageSrc'=>$this->imageSrcPath,':mydate'=>$this->datetime));
+	           $stmt =     $this->connection->exec('INSERT into blog values (:Id,:title,:article,:slug,:imageSrc,:mydate,:keywords)',array (':title'=>$this->theTitle,':article'=>$this->mainText,':slug'=>$this->slug,':imageSrc'=>$this->imageSrcPath,':mydate'=>$this->datetime,':keywords'=>$this->keywords));
 					if($stmt)
 					{
 									
@@ -70,12 +81,11 @@ class Blog
 						}
 				
 				
-				
-				
-				}	
-				
-				
-					
+				}	//end of else			
+			
+			
+			
+			
 				}
 			   
           
@@ -106,14 +116,10 @@ class Blog
           
           {
 			  $f3=Base::instance();
-			 
-			 
-			 $this->blogUrl =   $f3->get('PARAMS.url'); 
-			
-		     $theUrl=  $this->blogUrl;
-		     
-		     $blogRecord = new Blogmodel();
-		  $result=   $this->blogR = $blogRecord->getArticle( $theUrl)  ;  
+			  $this->blogUrl =   $f3->get('PARAMS.url'); 
+			  $theUrl=  $this->blogUrl;
+		      $blogRecord = new Blogmodel();
+		      $result=   $this->blogR = $blogRecord->getArticle( $theUrl)  ;  
 		 // now to get cooments using blog article id
 		 $id = $result['Id'];
 		 
@@ -123,8 +129,8 @@ class Blog
 		 
 		 
 		 
-		  $f3->set('result', $result);	
-		  $f3->set('result2',$result2);
+		  $f3->set('result', $result);	//blog
+		  $f3->set('result2',$result2); //blog comments
 		    echo View::instance()->render('blogArticle.htm'); 
 		
 		  }
