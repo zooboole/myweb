@@ -1,11 +1,17 @@
 
 
+There are two purposes for this project. One came from talking to SME's where really 
+they just want something light with the basiscs of static pages, contact form & functionality 
+of being able to submit a blog into a GUI using the live web on remote server.
+Also if they need help or add code, they want it to be fairly easy for 
+someone with a little of PHP knowledge to be able to do this.One thing 
+about fatfree is its easy to use your own PHP classes & native PHP
 
 
-From my experience there are two ways to learn code; for instance with f3 download the zip ,read 
-documentation & get on with it.
 
-Another way is to download a roughly working web , or to put it another way 
+Also from my experience there are two ways to learn code; for 
+instance with f3 download the zip ,read 
+documentation & get on with it. Another way is to download a roughly working web , or to put it another way 
 somebody's use of the developers download  & to take a watch makers analogy -take it apart 
 & see how it ticks.
 
@@ -14,19 +20,15 @@ This almost ready to run is basically a clone of
 http://ghanalug.org [ghanalug.org](http://ghanalug.org)
 
 
-To some (probably most) professional coders its  maybe rough around the edges & convoluted.
-Apparently Jimi Hendrix said he went to see rubbish guitar players since you could still 
-learn something  from them.
+Login using link on menu. Default login is:
+user:admin
+pass:admin
 
-So i take solace that even if my coding  is considered the roughest diamond around somebody might get ideas.
- 
+On login as admin you should see a couple of links quoted where you can 
+change the defualt password & link to submit a blog.  
 
 
-For instance in PHP classes i used a lot of class member or class property variables,
-when i could have just used variables inside functions. oh well mark II might be down the road.
 
-Anyway its almost ready to R&R since it uses sqlite3 database so there is no create MySQl
-tables etc as would be the case with MySQl
 
 The main features are:
 
@@ -44,11 +46,13 @@ All pages are in ui folder. To create More pages just open template.htm (templat
 <a href ="/about_us">about us</a>
 ```
 
+The above page does not exist & if you try it , system should pick up it does not exist
+
 So you could have hundreds of static pages & they will all be handled by page class. Which injects 
 content into page.htm
 
 For the blog i had to alter page.htm & add a couple of other pages to make it work including  
-blogTitles.htm,  blogArticle.htm & page2.htm. So you are going to have to edit footer in these to match page.htm
+blogTitles.htm,  blogArticle.htm & page2.htm. So you are going to have to edit footer in thse to match page.htm
 
 
 3) Specific routes are listed in routes.ini 
@@ -73,7 +77,7 @@ There is a browse button to search for & upload one image for the blog which sho
  One quirk thing is text for image path in blogImages saves to db in lower case, so if you call an image SomeImage.png it will be there , but wil not be seen on blogArticle page
  
  
- 8) The web users a basic MVC - i can't get my head around ORM so i mostly use PDO. Some code needs shifting from controller to model
+ 8) The web users a basic MVC - i can't get my head around ORM so i mostly use PDO. Some code needs shiftintg from contgroller to model
 
 9) I aim to add forum code at a later date  so there is a route /userRegistration which can be developed later
 

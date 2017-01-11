@@ -15,10 +15,10 @@ class message
 				$ip = $_SERVER['REMOTE_ADDR'];
 			 	$theIp = strval($ip);
 				$this->totalMessage = "new enquiry  from  ".$this->theirName ." \r\n their ip is    :".$theIp."\r\n their email  ".$this->theirEmail." \r\n their message:  ".$this->theirMessage;
-				$smtp = new SMTP ( 'smtp.somedomain.host', 587, 'tls/ssl','emailsetupondomain@domain.com', 'Password' );
-				$smtp->set('From', '<somebody@domain.com>');
-				$smtp->set('To', '<youremail@gmail.com>');
-				$smtp->set('Subject', 'Enquiry from your web');  
+				$smtp = new SMTP ( 'smtp.freehosting.host', 587, 'tls/ssl','andybrookestar@ghanalug.org', 'Andrina17' );
+				$smtp->set('From', '<andybrookestar@ghanalug.org>');
+				$smtp->set('To', '<andybrookestar@gmail.com>');
+				$smtp->set('Subject', 'Enquiry from ghanalug');  
 				$message = $this->totalMessage;
 				$this->myBoolean =  $smtp->send($message);
 

@@ -85,6 +85,7 @@
     }
     div.footer
     {
+   
     background-color: #9976da;
       color: white;
       padding-top: 10px;
@@ -98,10 +99,10 @@
      
 
     
-height:150px;
+max-height:187px;
 margin-bottom:0px;
 margin-top:0px;
-background:url(../images/Tux4.png);
+/*background:url(../images/Tux4.png);*/
 background-size:cover;
 
 
@@ -276,7 +277,10 @@ text-align:center;
 
 
 
-
+div.clearfix
+{
+clear:both;
+}
 
 
 
