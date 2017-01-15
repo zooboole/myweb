@@ -16,23 +16,17 @@ $db = new \DB\SQL('sqlite:andyDb');
 $f3->set ('conn',$db);
 
 
-$f3->route('POST /password',
+
+$f3->route('GET /experiment',
     function($f3) 
     {
-		$rawpassword = $f3->get('POST.password');
-		$password = trim($rawpassword);
-		$crypt = \Bcrypt::instance();
-		$salt = $f3->get('salt');
-		$userPassword =   $crypt->hash($password,$salt)   ; 
-	    $useModel = New Usermodel();
-	    $useModel->update($userPassword); 
-	
 		
-	
-	
+echo 	$myvar = $f3->get('Email');
 	
 		
 });
+
+
 
 $f3->config('config.ini');
 

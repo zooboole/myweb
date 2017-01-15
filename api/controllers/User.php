@@ -115,4 +115,27 @@ END;
 			   
  }      
 
+
+      function resetAdminPassword()
+      {
+		  
+		 $f3=Base::instance();   
+		  $rawpassword = $f3->get('POST.password');
+		$password = trim($rawpassword);
+		$crypt = \Bcrypt::instance();
+		$salt = $f3->get('salt');
+		$userPassword =   $crypt->hash($password,$salt)   ; 
+	    $useModel = New Usermodel();
+	    $useModel->update($userPassword); 
+		  
+	  }
+
+
+
+
+
+
+
+
+
 }
