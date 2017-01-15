@@ -30,20 +30,20 @@ pass:admin
 The main points /features are:
 
 1) On login as admin you should see a couple of links quoted where you can 
-change the default password & link to submit a blog.  
+change the defualt password & link to submit a blog.  
 
 
 2) It uses Twitter bootstrap so its fairly smart phone (therefore Google friendly) ;
 just minimize Browser Window & you should see menu change to toggle type.Everything including header image should shrink
 
 3) Class page in api/controllers  handles all static pages where there is no specific
- route set up for a  page. http://www.somedomain/ is going to cause problem for the controller
+ route set up for a  page. http://www.somedomain/ is going to causea problem for the controller
  page because the bit after "/" is blank. Thus "/" is handled by the route 
  GET /=Home->index 
  
  To get rid of all the stuff below <p> Welcome to home page which is home.htm in ui </p>
  
- get rid off the code block below 
+ get rid off the code bloack below 
  
 ```
  
@@ -71,7 +71,7 @@ Page class also catches none existent pages (such as the above) at the moment & 
 system should pick up it does not exist
 
 You could have hundreds of static pages & they will all be handled by page class. 
-Which injects the content into page.htm
+Which injects ther content into page.htm
 
 For the blog i had to alter page.htm & add a couple of other pages to make it work including  
 blogTitles.htm,  blogArticle.htm . So you are going to have to edit menu & footer section so  
@@ -88,7 +88,7 @@ There is a browse button to search for & upload one image for the blog which sho
  which might make sqlite3 choke. You can use 
 
 ```
- <p> </p>  for outside of paragraph's & also <br>
+ <p> </p>  for outside of paragrahs & also <br>
  
  
  ```
@@ -100,17 +100,17 @@ There is a browse button to search for & upload one image for the blog which sho
  
  7) The blog will allow for user comments - there is a status field  of either 0 or 1 so 
  that it can be used  to either show or hide comments but i have not implemented it yet, 
- so the default is all comments will show. I have NOT yet   added pagination
+ so the deafualt is all comments will show. I have NOT yet   added pagination
  One quirk thing is text for image path in blogImages saves to db in 
  lower case, so if you call an image SomeImage.png it will be there , 
- but Will not be seen on blogArticle page
+ but wil not be seen on blogArticle page
  
  
  8) The web users a basic MVC - i can't get my head around ORM 
- so i mostly use PDO. Some code needs shifting from controller to model
+ so i mostly use PDO. Some code needs shiftintg from contgroller to model
 
 9) I aim to add forum code at a later date  so there is a route /userRegistration which can be developed later
 
 10) The home of fatfree is  [fatfree ]( https://fatfreeframework.com/3.6/home ) in case you are in a difficult
-access to Internet i left the fatfree docs which are at /userRef
+access to Interent i left the fatfree docs which are at /userRef
 
