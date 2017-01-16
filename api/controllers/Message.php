@@ -6,8 +6,11 @@ class message
        public $theirMessage;
        public $totalMessage;
        public $myBoolean;
-       public  function process($f3)
+       public  function process()
               {
+				  $f3=Base::instance();
+				  
+				  
 				//receives data from contact_us form
 			 	 	$this->theirName = $f3->get('POST.name');
 			  	$this->theirEmail = $f3->get('POST.email');
@@ -15,7 +18,10 @@ class message
 				$ip = $_SERVER['REMOTE_ADDR'];
 			 	$theIp = strval($ip);
 				$this->totalMessage = "new enquiry  from  ".$this->theirName ." \r\n their ip is    :".$theIp."\r\n their email  ".$this->theirEmail." \r\n their message:  ".$this->theirMessage;
-				$smtp = new SMTP ( 'smtp.freehosting.host', 587, 'tls/ssl','andybrookestar@ghanalug.org', 'Andrina17' );
+				 //$smptDetails = $F3->get
+				
+				
+				$smtp = new SMTP ( 'smtp.somehost.com', 587, 'tls/ssl','someemailonhostd@ghanalug.org', 'Somepassword' );
 				$smtp->set('From', '<andybrookestar@ghanalug.org>');
 				$smtp->set('To', '<andybrookestar@gmail.com>');
 				$smtp->set('Subject', 'Enquiry from ghanalug');  

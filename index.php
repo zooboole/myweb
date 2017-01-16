@@ -23,7 +23,7 @@ $f3->route('GET /experiment',
 		
 echo 	$myvar = $f3->get('Email');
 	
-		
+echo $f3->get('SMPTdetails');		
 });
 
 
