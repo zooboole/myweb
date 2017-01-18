@@ -22,15 +22,29 @@ class message
 				$ip = $_SERVER['REMOTE_ADDR'];
 			 	$theIp = strval($ip);
 				$this->totalMessage = "new enquiry  from  ".$this->theirName ." \r\n their ip is    :".$theIp."\r\n their email  ".$this->theirEmail." \r\n their message:  ".$this->theirMessage;
-				$theHost= $f3->get('HOST');
-				$thePort = $f3->get('PORT');
-				$theAuthmethod= $f3->get('authMethod');
-				$emailUserOnDomain=$f3->get('userOnDomain');
-				$emailPass=$f3->get('userPasswordOnDomain');
+			 	$theHost= $f3->get('HOST');
+			 	$thePort = $f3->get('PORT');
+			 	$theAuthmethod= $f3->get('authMethod');
+			  	$emailUserOnDomain=$f3->get('userOnDomain');
+			 	$emailPass=$f3->get('userPasswordOnDomain');
+				 
+				
+			
+				
+				
+				$messageSubject=$f3->get('messageSubject');
+				 
 				$smtp = new SMTP("$theHost", $thePort,"$theAuthmethod","$emailUserOnDomain","$emailPass");
-				$smtp->set('From', '<andybrookestar@ghanalug.org>');
-				$smtp->set('To', '<andybrookestar@gmail.com>');
-				$smtp->set('Subject', 'Enquiry from ghanalug');  
+		
+			
+				$smtp->set('From', '<andybrookestar@ghanalug.org>');//
+				
+				
+				
+				
+				
+				$smtp->set('To', '<andybrookestar@gmail.com>');//
+			   	$smtp->set('Subject', 'Enquiry from ghanalug');  //
 				$message = $this->totalMessage;
 				$this->myBoolean =  $smtp->send($message);
 
@@ -46,8 +60,7 @@ class message
 	 
 					  }
     
-                 
-    
+                     
     
 			}
 	
