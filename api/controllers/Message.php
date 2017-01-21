@@ -32,19 +32,29 @@ class message
 			
 				
 				
-				$messageSubject=$f3->get('messageSubject');
+				
 				 
 				$smtp = new SMTP("$theHost", $thePort,"$theAuthmethod","$emailUserOnDomain","$emailPass");
 		
 			
-				$smtp->set('From', '<andybrookestar@ghanalug.org>');//
+			
+                $FromOnDomain =$f3->get('FromOnDomain');			
+				$smtp->set('From',$FromOnDomain );
+			  
+			 
+			 
+			 
+			    $forwardMessageTo= $f3->get('sendMessageTo'); 
+				$smtp->set('To',$forwardMessageTo );
+			   
+			   
+			    $subject = $f3->get('Subject');
+			   	$smtp->set('Subject', $subject);  
 				
 				
 				
 				
 				
-				$smtp->set('To', '<andybrookestar@gmail.com>');//
-			   	$smtp->set('Subject', 'Enquiry from ghanalug');  //
 				$message = $this->totalMessage;
 				$this->myBoolean =  $smtp->send($message);
 
