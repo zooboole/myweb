@@ -79,6 +79,7 @@ it all matches.
 
 
 4) Specific routes are listed in routes.ini 
+4a) Config for values including for SMTP setup for contact_us to work are in config.ini
 
 5) There is a basic form GUI in order to submit a blog ,which is just a case of copy & paste 
 text into form text boxes of title, key words , article. key words are used to populate meta tags
