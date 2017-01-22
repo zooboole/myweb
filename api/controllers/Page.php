@@ -27,6 +27,10 @@ class Page
 				$f3=Base::instance();
 				$base = $f3->get('BASE');
 				$f3->set('home',$base);
+				
+				
+				
+				
 				$this->theUrlBit =	  $f3->get('PARAMS.page');
 				$this->myFile =   file_exists("ui/{$this->theUrlBit}.htm");     
 			    
