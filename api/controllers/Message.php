@@ -14,7 +14,7 @@ class message
               {
 				  $f3=Base::instance();
 				  
-				  
+				 
 				//receives data from contact_us form
 			 	 	$this->theirName = $f3->get('POST.name');
 			  	$this->theirEmail = $f3->get('POST.email');
@@ -56,8 +56,8 @@ class message
 				
 				
 				$message = $this->totalMessage;
-				$this->myBoolean =  $smtp->send($message);
-
+					
+					
 					if($this->myBoolean)
 					{
 						$f3->set('content', 'messageSent.htm');			   
@@ -70,9 +70,9 @@ class message
 	 
 					  }
     
-                     
+                   
     
-			}
+			}//end function
 	
 	
 			   

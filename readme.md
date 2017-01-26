@@ -22,7 +22,7 @@ somebody's use of the developers download  & to take a watch makers analogy -tak
 
 Login using link on menu. Default login is:
 user:admin
-pass:admin
+pass:Englishman
 
 
 
