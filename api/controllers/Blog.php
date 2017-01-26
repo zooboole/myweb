@@ -42,7 +42,7 @@ class Blog
 					
 					else
 					{
-					 
+					
 					$this->connection = $f3->get('conn');
 					
 				     $this->keywords= $f3->get('POST.keywords');
@@ -53,6 +53,11 @@ class Blog
 					$this->theTitle =trim($title);
 					
 					$this->mainText = $f3->get('POST.maintext');
+				 $this->mainText =    $f3->scrub($this->mainText,'p; br; span; a');
+				    
+				    
+				    
+				    
 				    $slimy = New Slug();
 				    $this->slug =$slimy->getSlug($this->theTitle);
 					$web = \Web::instance();
@@ -84,9 +89,8 @@ class Blog
 				}	//end of else			
 			
 			
-			
-			
-				}
+						
+				} //end function
 			   
           
             public 	function blogTitles()
