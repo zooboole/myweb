@@ -32,6 +32,7 @@ class User
 				
 					if (($result==True ) && ($username =="admin"))
 					{
+					
 					$user=   $f3->set('SESSION.user_name',$username);	
 					//above will be admin
 					$f3->set('user', $user);

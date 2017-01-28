@@ -46,15 +46,20 @@ class Blog
 					$this->connection = $f3->get('conn');
 					
 				     $this->keywords= $f3->get('POST.keywords');
+				     $this->keywords = $f3->scrub($this->keywords,'p; br; span; a');
+				     $this->keywords =  SQLite3::escapeString($this->keywords);
 				
 				
 				
 					$title = $f3->get('POST.title');
 					$this->theTitle =trim($title);
+					$this->theTitle = $f3->scrub($this->theTitle);
+					$this->theTitle = SQLite3::escapeString($this->theTitle);
+					
 					
 					$this->mainText = $f3->get('POST.maintext');
 				 $this->mainText =    $f3->scrub($this->mainText,'p; br; span; a');
-				    
+				  $this->mainText = SQLite3::escapeString($this->mainText);  
 				    
 				    
 				    

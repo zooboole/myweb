@@ -17,8 +17,27 @@ class message
 				 
 				//receives data from contact_us form
 			 	 	$this->theirName = $f3->get('POST.name');
+			  	    $this->theirName = $f3->scrub($this->theirName);
+			  	
 			  	$this->theirEmail = $f3->get('POST.email');
+			  	$this->theirEmail = $f3->scrub($this->theirEmail);
+			  	
+			  	
 			  	$this->theirMessage = $f3->get('POST.message');
+					  	$this->theirMessage =$f3->scrub($this->theirMessage);
+					  	
+					  	echo $f3->get('IP');
+					  	$s= New  Session();
+
+$f3->set('SESSION.test',123);
+echo $f3->get('SESSION.test');
+					  	
+			echo 	$s->CSRF();	  	
+					  	
+			  	
+			/*
+				
+				
 				$ip = $_SERVER['REMOTE_ADDR'];
 			 	$theIp = strval($ip);
 				$this->totalMessage = "new enquiry  from  ".$this->theirName ." \r\n their ip is    :".$theIp."\r\n their email  ".$this->theirEmail." \r\n their message:  ".$this->theirMessage;
@@ -69,13 +88,13 @@ class message
 					echo View::instance()->render('page.htm');
 	 
 					  }
-    
+       */
                    
     
-			}//end function
+			}//end function process 
 	
 	
-			   
-           
+			 
+         
 
     }

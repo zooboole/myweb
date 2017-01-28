@@ -69,7 +69,11 @@ class Page
 							
 						  $f3->set('title',  "no such page");	
 					$f3->set('content', "{$this->theUrlBit}.htm");
-					$f3->set('theTags',"no page");	   
+					$f3->set('theTags',"admin page ");	   
+			echo 	$csrf = 	$f3->get('SESSION.csrf');
+				$f3->set('csrf', $csrf);
+					
+					
 					echo View::instance()->render('page.htm');		
 							
 						
