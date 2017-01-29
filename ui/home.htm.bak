@@ -21,25 +21,25 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="ui/images/1.jpg" alt="someImage school">
+      <img src="ui/images/1.jpg" alt="bim school">
     </div>
 
     <div class="item">
-     <img src="ui/images/2.jpg" alt="someImage school ">
+     <img src="ui/images/2.jpg" alt="bim school ">
     
     
     </div>
 
     <div class="item">
-      <img src="ui/images/3.jpg" alt="someImage school ">
+      <img src="ui/images/3.jpg" alt="bim school ">
     </div>
 
     <div class="item">
-     <img src="ui/images/4.jpg" alt="someImage school ">
+     <img src="ui/images/4.jpg" alt="bim school ">
     </div>
  
  <div class="item">
-     <img src="ui/images/5.jpg" alt="someImage school ">
+     <img src="ui/images/5.jpg" alt="bim school ">
     </div>
  
 
@@ -71,10 +71,10 @@
 
  
 				<p>Apart from the home page every other page which does not have 
-				allocated to it a specific route will be loaded by Class Page.php .basically to create a new static 
+				alloquated to it a specific route will be loaded by Class Page.php .basicallt to create a new static 
 				page all you have to do is open template.htm & save it as say &#34;about_us.htm&#34;
 				</p>
-				<p>Then create a link to it in the menu bar of page.htm or anywhere on a page using :<br>
+				<p>Then creat a link to it in the menu bar of page.htm or anywhere on a page using :<br>
 				<?php echo $randy;?></p>
 				<p>Docs for this version of a web using fat free is on menu above docs ,and fatfree docs themselves also on menu</p>
 

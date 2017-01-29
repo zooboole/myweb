@@ -299,9 +299,9 @@ h4.amadeus
 {
 font-family:'amadeus_regularamadeusRg';
 font-size:1.5em;
-font-weight:lighter;
+font-weight:bold;
 line-height:20px;
-color:red;
+color:#9273ff;
 
 
 }
@@ -342,10 +342,20 @@ h1.fff
 font-family: 'fff_tusjbold';
 font-size:48px;
 color:red;
+}
 
+h4.fff
 
+{
+font-family: 'fff_tusjbold';
+font-size:18px;
+
+color:black;
 
 }
+
+
+
 h2.dumb2
 
 {
