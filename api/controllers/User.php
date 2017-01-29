@@ -33,9 +33,16 @@ class User
 					if (($result==True ) && ($username =="admin"))
 					{
 					
-					$user=   $f3->set('SESSION.user_name',$username);	
+					
+					
+					$f3->set('SESSION.user_name',$username);	
+				 	 $rand = md5(uniqid(rand(),true));
+                   
+                   $f3->set('SESSION.csrf',$rand);   
+					
+					
 					//above will be admin
-					$f3->set('user', $user);
+					//$f3->set('user', $user);
 					$f3->set('content', 'loggedin.htm');	
 					self::setmyHeredoc();
 					$getVar = self::getmyHeredoc();
@@ -68,7 +75,10 @@ class User
 				
 				elseif(!$result)
 				{
-					echo "we cound not find you";
+					
+				        $f3->set('content', 'nouserfound.htm');			   
+						echo View::instance()->render('page.htm');
+				
 				}
 	    	}		  
 		
@@ -77,8 +87,11 @@ class User
 		        function logout()
 		        {
 					    $f3=Base::instance(); 
-					    $f3->clear('SESSION.user_name');
-	                    session_commit();
+					   $f3->clear('SESSION');
+						session_commit();
+					   
+					   
+					    
 					    $f3->set('content', 'loggedout.htm');			   
 						echo View::instance()->render('page.htm');
 				}

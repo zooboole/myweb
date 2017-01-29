@@ -38,12 +38,17 @@
 			 <div class="form-group"> <label for="inputfile">File input</label> 
 		<input type="file" id="file" name= "file">
 		 <p class="help-block">browse for image on your PC</p> </div> 
+		
+		     <input type="hidden" name="csrf" value="<?php echo $csrf;?>"    />		    
+		
 		 <button type="submit" class="btn btn-default">Submit</button>
 			
 				
 				
 				
 				</form>
+				
+				
 				<br><br>
 				</div><!-- div column-->
 				</div><!--end of row content-->

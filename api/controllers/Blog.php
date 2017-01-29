@@ -14,85 +14,66 @@ class Blog
 			protected $blogR;
 			protected $blogC;
 			protected $keywords;//for metatags
+			
+			
 			 function beforeroute()
-           {
-			          
+								{
+			     
             
            
-			}
+								}
 			
 			
 			
 			
 			
 		
-							public 	function process()
-              {
-				
-						
-					
-					
-					$f3=Base::instance();	 
-					
-					 if( ($f3->get('SESSION.user_name')=== NULL )OR ($f3->get('SESSION.user_name')!== 'admin'))  
-					
-					{
-					$f3->reroute('/userLogin');	
-					}	
-					
-					else
-					{
-					
-					$this->connection = $f3->get('conn');
-					
-				     $this->keywords= $f3->get('POST.keywords');
-				     $this->keywords = $f3->scrub($this->keywords,'p; br; span; a');
-				     $this->keywords =  SQLite3::escapeString($this->keywords);
-				
-				
-				
-					$title = $f3->get('POST.title');
-					$this->theTitle =trim($title);
-					$this->theTitle = $f3->scrub($this->theTitle);
-					$this->theTitle = SQLite3::escapeString($this->theTitle);
-					
-					
-					$this->mainText = $f3->get('POST.maintext');
-				 $this->mainText =    $f3->scrub($this->mainText,'p; br; span; a');
-				  $this->mainText = SQLite3::escapeString($this->mainText);  
-				    
-				    
-				    
-				    $slimy = New Slug();
-				    $this->slug =$slimy->getSlug($this->theTitle);
-					$web = \Web::instance();
-					$a =	$web->receive(NULL,true,true );
-					
-					
-					
-					$name = array_keys($a);
-				 	$this->imageFile =  $name[0];
-					
-					
-					$this->imageSrcPath=    "   <img src = \"../$this->imageFile\"   class = \"img-responsive pull-left \" hspace = \"10px\" vspace = \"10px\"    >          ";
-				   
-	  	           	$this->datetime =     date("Y-m-d h:i:sa");
-	           $stmt =     $this->connection->exec('INSERT into blog values (:Id,:title,:article,:slug,:imageSrc,:mydate,:keywords)',array (':title'=>$this->theTitle,':article'=>$this->mainText,':slug'=>$this->slug,':imageSrc'=>$this->imageSrcPath,':mydate'=>$this->datetime,':keywords'=>$this->keywords));
-					if($stmt)
-					{
-									
-				       $f3->set('content', 'blogEntrySuccessful.htm');			   
-						echo View::instance()->render('page.htm');
-					}
-			
-					else
+			public 	function process()
 						{
-						echo "something went wrong";	
-						}
-				
-				
-				}	//end of else			
-			
+				 
+						$f3=Base::instance();
+					 	$test = strcmp($f3->get("POST.csrf"),$f3->get("SESSION.csrf"));
+				 	
+					if(   $test==0     )
+							{				
+										
+					        $this->connection = $f3->get('conn');
+					        $this->keywords= $f3->get('POST.keywords');
+				            $this->keywords = $f3->scrub($this->keywords,'p; br; span; a');
+				            $this->keywords =  SQLite3::escapeString($this->keywords);
+							$title = $f3->get('POST.title');
+							$this->theTitle =trim($title);
+							$this->theTitle = $f3->scrub($this->theTitle);
+							$this->theTitle = SQLite3::escapeString($this->theTitle);
+							$this->mainText = $f3->get('POST.maintext');
+							$this->mainText =    $f3->scrub($this->mainText,'p; br; span; a');
+							$this->mainText = SQLite3::escapeString($this->mainText);  
+				    	    $slimy = New Slug();
+							$this->slug =$slimy->getSlug($this->theTitle);
+							$web = \Web::instance();
+							$a =	$web->receive(NULL,true,true );
+							$name = array_keys($a);
+							$this->imageFile =  $name[0];
+							$this->imageSrcPath=    "   <img src = \"../$this->imageFile\"   class = \"img-responsive pull-left \" hspace = \"10px\" vspace = \"10px\"    >          ";
+				           	$this->datetime =     date("Y-m-d h:i:sa");
+							$stmt =     $this->connection->exec('INSERT into blog values (:Id,:title,:article,:slug,:imageSrc,:mydate,:keywords)',array (':title'=>$this->theTitle,':article'=>$this->mainText,':slug'=>$this->slug,':imageSrc'=>$this->imageSrcPath,':mydate'=>$this->datetime,':keywords'=>$this->keywords));
+								if($stmt)
+									{
+									$f3->set('content', 'blogEntrySuccessful.htm');			   
+									echo View::instance()->render('page.htm');
+									}
+									
+								}
+					
+						
+							elseif ( $f3->get('POST.csrf') != $f3->get('SESSION.csrf'))
+					
+							{
+					
+							$f3->set('content', 'error.htm');			   
+							echo View::instance()->render('page.htm');
+						
+							}
 			
 						
 				} //end function
@@ -148,9 +129,27 @@ class Blog
          {
 				$f3=Base::instance();
 			 	$blogId= $f3->get('POST.artId');
+			 
+			 	
+			 //	$this->theTitle = $f3->scrub($this->theTitle);
+			//	$this->theTitle = SQLite3::escapeString($this->theTitle);
+			 
 			 	$name=  $f3->get('POST.name');
+			 	$name = $f3->scrub($name);
+			 	$name= SQLite3::escapeString($name);
+			 	
+			 	
+			 	
 			 	$comment =  $f3->get('POST.comments');
+			 	$comment = $f3->scrub($comment);
+			 	$comment = SQLite3::escapeString($comment);
+			 	
+			 	
+			 	
 			 	$email =  $f3->get('POST.email');
+			 	$email = $f3->scrub($email);
+			 	$email = SQLite3::escapeString($email);
+			 	
 			 	$thedatetime =     date("Y-m-d h:i:sa");
 				
 				
