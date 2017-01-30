@@ -1,4 +1,5 @@
 
+![myweb](https://github.com/captain-sensible/myweb/ui/images/myweb.png)
 
 There are two purposes for this project. One came from talking to SME's where really 
 they just want something light - a basic website  of static pages,a contact form where people
