@@ -1,5 +1,5 @@
 <div class="container-fluid text-center">    
-  
+ <h1 class ="amadeus">HOME PAGE</h1>  
  
  <br><br><br><br>
  
@@ -65,18 +65,40 @@
   
 
 
-<h4 class ="fff">
+<h4 class ="opensans">
 
- <p> Welcome to the home page which is file &#34;welcome.htm&#34; in folder ui </p>
+ <p> Welcome to the home page which is file &#34;home.htm&#34; in folder ui </p>
 
  
 				<p>Apart from the home page every other page which does not have 
-				allocated to it a specific route will be loaded by Class Page.php .basically to create a new static 
-				page all you have to do is open template.htm & save it as say &#34;about_us.htm&#34;
+				allocated to it a specific route will be loaded by PHP Class Page.php .
+				Basically to create a new static page all you have to do is open 
+				template.htm & save it as something else in the UI folder where template.htm is
+				 say &#34;about_us.htm&#34; </p><p>template.htm just consists of a couple of
+				  divs with class 	col-sm-12 text-left , that's because i&#39;m using 
+				  Twitter Bootstrap for the front end, which  makes the pages respond 
+				  & re-size when they are viewed on a smart phone. Template.htm also does not have
+				  a page header or footer; that's because when there is  GET request for a page
+				  with for instance url /template class page basically injects 
+				  the content of the page 	from the requested URL & injects it into page.htm		
 				</p>
-				<p>Then create a link to it in the menu bar of page.htm or anywhere on a page using :<br>
-				<?php echo $randy;?></p>
-				<p>Docs for this version of a web using fat free is on menu above docs ,and fatfree docs themselves also on menu</p>
+				<p> Its a concept along the lines as that of some other frameworks, which use for instance
+				&#34; Blade&#34;It saves a lot of duplication putting the same links & 
+				images into each page.</p>
+				
+				
+				
+				<p>A link to say to a static page in the top menu bar or a link anywhere on another
+				will be in the form :<br>
+				<?php echo $randy;?><br></p>
+				
+				<p>Class Page.php will load the page using the url /about_us ,
+				 thats it! theres no need to include the suffix .htm at the end i.e don't use 
+				 /about_us.htm</p>
+				
+				
+				<p>Docs for my construction  using fat free is on menu above as are fatfree docs themselves.</p>
+				The main fatfree web-site can be accessed using the icon in the page footer below. 
 
                   </h4>
 				

@@ -1,5 +1,5 @@
 <div class="container-fluid text-center">    
-  
+ <h1 class ="amadeus">HOME PAGE</h1>  
  
  <br><br><br><br>
  
@@ -21,25 +21,25 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="ui/images/1.jpg" alt="bim school">
+      <img src="ui/images/1.jpg" alt="someImage school">
     </div>
 
     <div class="item">
-     <img src="ui/images/2.jpg" alt="bim school ">
+     <img src="ui/images/2.jpg" alt="someImage school ">
     
     
     </div>
 
     <div class="item">
-      <img src="ui/images/3.jpg" alt="bim school ">
+      <img src="ui/images/3.jpg" alt="someImage school ">
     </div>
 
     <div class="item">
-     <img src="ui/images/4.jpg" alt="bim school ">
+     <img src="ui/images/4.jpg" alt="someImage school ">
     </div>
  
  <div class="item">
-     <img src="ui/images/5.jpg" alt="bim school ">
+     <img src="ui/images/5.jpg" alt="someImage school ">
     </div>
  
 
@@ -65,18 +65,40 @@
   
 
 
-<h4 class ="fff">
+<h4 class ="opensans">
 
- <p> Welcome to the home page which is file &#34;welcome.htm&#34; in folder ui </p>
+ <p> Welcome to the home page which is file &#34;home.htm&#34; in folder ui </p>
 
  
 				<p>Apart from the home page every other page which does not have 
-				alloquated to it a specific route will be loaded by Class Page.php .basicallt to create a new static 
-				page all you have to do is open template.htm & save it as say &#34;about_us.htm&#34;
+				allocated to it a specific route will be loaded by PHP Class Page.php .
+				Basically to create a new static page all you have to do is open 
+				template.htm & save it as something else in the UI folder where template.htm is
+				 say &#34;about_us.htm&#34; </p><p>template.htm just consists of a couple of
+				  divs with class 	col-sm-12 text-left , thats because i&#39;m using 
+				  Twitter Bootstrap for the fromt end, which  makes the pages respond 
+				  & re-size when they are viewd on a smart phone. Template.htm also does not have
+				  a page header or footer; thats because when there is  GET request for a page
+				  with forinstance url /template class page basically injects 
+				  the content of the page 	from the requested URL & injects it into page.htm		
 				</p>
-				<p>Then creat a link to it in the menu bar of page.htm or anywhere on a page using :<br>
-				<?php echo $randy;?></p>
-				<p>Docs for this version of a web using fat free is on menu above docs ,and fatfree docs themselves also on menu</p>
+				<p> Its a concept along the lines as that of some other frameworks, which use for instance
+				&#34; Blade&#34;It saves a lot of duplication putting the samelinks & 
+				images into each page.</p>
+				
+				
+				
+				<p>A link to say to a static page in the top menu bar or a link anywhere on another
+				will be in the form :<br>
+				<?php echo $randy;?><br></p>
+				
+				<p>Class Page.php will load the page using the url /about_us ,
+				 thats it! theres no need to include the sufix .htm at the end i.e don't use 
+				 /about_us.htm</p>
+				
+				
+				<p>Docs for my construction  using fat free is on menu above as are fatfree docs themselves.</p>
+				The main ftafree web-ste can be accesed using the icon in the page footer below. 
 
                   </h4>
 				
