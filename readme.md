@@ -1,14 +1,15 @@
 
 ![screenshot](ui/images/myweb.png)
 
-There are two purposes for this project. One came from talking to SME's where really 
+There are two purposes for this project. One came from talking to SME business  where really 
 they just want something light - a basic website  of static pages,a contact form where people
-can get back to them  & functionality of being able to submit a blog (including a picture)
+can get back to them  & functionality of being able to submit  blogs 
+(including a picture) they can do themselves by just pasting text 
 into a GUI on the live web site.
 
 Also if they need help from someone , they want it to be fairly easy for 
 someone with a little PHP knowledge to be able to do this.One thing 
-about fatfree is its very easy to use your own PHP classes & native PHP
+about fatfree is its very easy to use your own PHP classes, native PHP & edit code.
 
 
 
@@ -17,61 +18,37 @@ instance with f3 download the zip ,read documentation & get on with it.
 
  Another way is to download a roughly working web , or to put it another way 
 somebody's use of the developers download  & to take a watch makers analogy -take it apart 
-& see how it ticks.This almost ready to run is basically a clone of 
-[ghanalug ](http://ghanalug.org)
-
-
-Login using link on menu. Default login is:
-user:admin
-pass:Englishman
-
-
+& see how it ticks.
 
 
 The main points /features are:
 
-1) On login as admin you should see a couple of links quoted where you can 
+1) On login as admin :
+
+user:admin
+
+pass:Englishman 
+
+you should see a couple of links quoted where you can 
 change the default password & link to submit a blog.  
 
 
 2) It uses Twitter bootstrap so its fairly smart phone (therefore Google friendly) ;
-just minimize Browser Window & you should see menu change to toggle type.Everything including header image should shrink
+just minimize Browser Window & you should see menu change to toggle type.Everything
+ including header image should shrink
 
 3) Class page in api/controllers  handles all static pages where there is no specific
- route set up for a  page. http://www.somedomain/ is going to cause problem for the controller
- page because the bit after "/" is blank. Thus "/" is handled by the route 
- GET /=Home->index 
- 
- To get rid of all the stuff below <p> Welcome to home page which is home.htm in ui </p>
- 
- get rid off the code block below 
- 
-```
- 
- <?php echo Markdown::instance()->
-		convert(Base::instance()->read('readme.md')); ?>   which is in home.htm
- 
-```
-
-
- 
- 
- 
-
-All pages including home.htm are in ui folder. To create More pages just open template.htm with a text editor
-(template in the context
- of starting with rough blueprint) ,edit text & save it to the page you want eg about_us.htm 
- then create a link to about_us such as 
+ route set up for a  page. All pages including home.htm are in ui folder. 
+ To create more pages just open template.htm with a text editor & edit text,add text
+  & save it to the page you want eg about_us.htm  then create a link to about_us.htm
+   such as 
 
 ```
   
 <a href ="/about_us">about us</a>
 ```
 
-Page class also catches none existent pages (such as the above) at the moment & if you try it , 
-system should pick up it does not exist
-
-You could have hundreds of static pages & they will all be handled by page class. 
+You don't need to include the sufix of .htm in the link.You could have hundreds of static pages & they will all be handled by page class. 
 Which injects the content into page.htm
 
 For the blog i had to alter page.htm & add a couple of other pages to make it work including  
@@ -82,7 +59,8 @@ it all matches.
 4) Specific routes are listed in routes.ini 
 4a) Config for values including for SMTP setup for contact_us to work are in config.ini
 
-5) There is a basic form GUI in order to submit a blog ,which is just a case of copy & paste 
+5) 
+ There is a basic form GUI in order to submit a blog ,which is just a case of copy & paste 
 text into form text boxes of title, key words , article. key words are used to populate meta tags
 There is a browse button to search for & upload one image for the blog which should be circa
  350 px wide x 350 px height.  In my case i will be submitting all blogs, so i have 
@@ -94,12 +72,14 @@ There is a browse button to search for & upload one image for the blog which sho
  
  
  ```
- 6) I have found that sqlite3 is much more robust than MySQl since you can paste ' into the text box & sqlite can handle it.MySQl would throw a wobbly 
- In order to successfully submit a blog at  /blogSubmitForm you need to be logged in as admin.
- You an even work locally populate the andyDb & just load it back up to your live web.
+ 6) To get this to run almost out of the box so on databases that might cause 
+an issue with MySQL such as grant permissions etc. IN the end i just went for sqlite3 
+which means aprt form other things I can develop from a folder on my desktop using PHP's built
+in server than mess about with XAMPP, Apache which can be a pain to edit codeon lInux.
 
- 
- 
+The GUI to submit a blog is at  /blogSubmitForm but you need to be logged in as admin, 
+to have access to the page.
+  
  7) The blog will allow for user comments - there is a status field  of either 0 or 1 so 
  that it can be used  to either show or hide comments but i have not implemented it yet, 
  so the default is all comments will show. I have NOT yet   added pagination
