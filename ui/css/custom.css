@@ -97,12 +97,12 @@
     
     header {
      
-
-    
-max-height:187px;
-margin-bottom:0px;
 margin-top:0px;
-/*background:url(../images/Tux4.png);*/
+    
+min-height:150px;
+margin-bottom:0px;
+
+background:url(../images/header.png);
 background-size:cover;
 
 
@@ -110,10 +110,13 @@ background-size:cover;
     }
     
    
+ header h1,h4
  
-    
-    
-    
+ {
+ margin-top:0px;
+ text-align:center;
+ }
+ 
     
     
     

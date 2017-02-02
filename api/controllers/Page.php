@@ -17,6 +17,8 @@ class Page
 					{
 						
 						$theUser = $f3->get('SESSION.user_name');
+						
+						
 					}
 					
 					
@@ -34,10 +36,24 @@ class Page
 				$this->theUrlBit =	  $f3->get('PARAMS.page');
 				$this->myFile =   file_exists("ui/{$this->theUrlBit}.htm");     
 			    
-			    if($this->myFile ==1)
+			  if( ($this->myFile ==0)  OR  ($this->theUrlBit == "page"))
+			{
+				
+			$f3->set('title',  "no such page");	
+					$f3->set('content', "nopage.htm");	
+					$f3->set('theTags',"no page");	   
+					echo View::instance()->render('page.htm');	
+			
+			
+			}
+			  
+			  
+			  
+			  
+			    elseif($this->myFile ==1)
 			   {
 				
-						if(     (strcmp($this->theUrlBit,"adminRSPW") !== 0) AND  (strcmp($this->theUrlBit,"blogSubmitForm")!=0  )    )
+						if(     (strcmp($this->theUrlBit,"adminRSPW") != 0) AND  (strcmp($this->theUrlBit,"blogSubmitForm")!=0  )    )
 						{
 						
 						$tag = new Metatags3();
@@ -100,16 +116,7 @@ class Page
 		
 		
 		
-			elseif( $this->myFile ==0)
-			{
-				
-			$f3->set('title',  "no such page");	
-					$f3->set('content', "nopage.htm");	
-					$f3->set('theTags',"no page");	   
-					echo View::instance()->render('page.htm');	
 			
-			
-			}
 		
 		
 		
