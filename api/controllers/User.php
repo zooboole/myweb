@@ -108,7 +108,7 @@ class User
 	
 	Now that your logged in you can access pages below<br>  
 	You can submit a new blog here: <a href ="/blogSubmitForm">submit blog </a><br>
-	
+    You can remove bad blog comments by chnaging status from 1 to zero here : <a href ="/modComments">moderate blog comments</a><br>
 	Also you can change password here:<a href ="/adminRSPW">chnage admin password </a><br>
 		
     Please note the above pages have restricted access & can only be accessed by admin, after logging in.		

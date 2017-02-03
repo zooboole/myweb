@@ -49,7 +49,7 @@ Protected $commentRecord;
   {
 	  $this->IdFromBlog = $theId;
 	  
-	$result2 = $this->connection ->exec("SELECT *    FROM blogComments WHERE blogId =$this->IdFromBlog   ");
+	$result2 = $this->connection ->exec("SELECT *    FROM blogComments WHERE blogId =$this->IdFromBlog AND status=1  ");
     return $result2;
  }	  
 
@@ -60,7 +60,7 @@ Protected $commentRecord;
 $this->name = $name;
 $this->comment = $comment;
 $this->email = $email;
-$this->status=0;
+$this->status=1;
 $this->mydate=$thedatetime;
 	
 	
@@ -72,7 +72,15 @@ $stmt = 	$this->connection->exec('INSERT INTO blogComments VALUES(:Id,:blogId,:n
  }
 
 
-
+public function zeroCommentStatus($commentId)
+{
+	
+	$stmt = $this->connection->prepare("UPDATE blogComments  SET status=? WHERE Id=?");
+	$stmt->execute(array(0,$commentId));
+	return $stmt;
+	
+	
+}
 
 
 

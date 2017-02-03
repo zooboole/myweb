@@ -53,7 +53,7 @@ class Page
 			    elseif($this->myFile ==1)
 			   {
 				
-						if(     (strcmp($this->theUrlBit,"adminRSPW") != 0) AND  (strcmp($this->theUrlBit,"blogSubmitForm")!=0  )    )
+						if(  (strcmp($this->theUrlBit,"modComments") != 0)  AND (strcmp($this->theUrlBit,"adminRSPW") != 0) AND  (strcmp($this->theUrlBit,"blogSubmitForm")!=0  )    )
 						{
 						
 						$tag = new Metatags3();
@@ -65,7 +65,7 @@ class Page
 						
 						
 						}
-						elseif (    (   (strcmp($this->theUrlBit,"adminRSPW") == 0) OR  (strcmp($this->theUrlBit,"blogSubmitForm")==0  ) ) AND  (  ( $this->sessionTest == 1)   OR (  $f3->get('SESSION.user_name')!= "admin" )          ) )
+						elseif (    ( (strcmp($this->theUrlBit,"modComments")==0)OR  (strcmp($this->theUrlBit,"adminRSPW") == 0) OR  (strcmp($this->theUrlBit,"blogSubmitForm")==0  ) ) AND  (  ( $this->sessionTest == 1)   OR (  $f3->get('SESSION.user_name')!= "admin" )          ) )
 			
 						{
 				        $f3->set('title',  "no such page");	
@@ -79,7 +79,7 @@ class Page
 						}
 		                
 		                
-		                elseif (    (   (strcmp($this->theUrlBit,"adminRSPW") == 0) OR  (strcmp($this->theUrlBit,"blogSubmitForm")==0  ) ) AND  (  ( $this->sessionTest == 0)   AND (  $f3->get('SESSION.user_name')== "admin" )          ) )
+		                elseif (    (  (strcmp($this->theUrlBit,"modComments") == 0)OR (strcmp($this->theUrlBit,"adminRSPW") == 0) OR  (strcmp($this->theUrlBit,"blogSubmitForm")==0  ) ) AND  (  ( $this->sessionTest == 0)   AND (  $f3->get('SESSION.user_name')== "admin" )          ) )
 		                {
 							
 							
