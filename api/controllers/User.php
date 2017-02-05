@@ -24,7 +24,7 @@ class User
 			$password = trim($rawpassword);
 		    $userPassword =   $crypt->hash($password,$salt)   ; 
 			
-			$user = new DB\SQL\Mapper($con, 'users');
+			$user = new DB\SQL\Mapper($con, 'admin');
 			$auth = new \Auth($user, array('id'=>'Username', 'pw'=>'Password'));
 			$result = $auth->login($username,$userPassword);
 				
@@ -105,15 +105,14 @@ class User
 		
 		
 	Hi, Admin 
-	
-	Now that your logged in you can access pages below<br>  
-	You can submit a new blog here: <a href ="/blogSubmitForm">submit blog </a><br>
-    You can remove bad blog comments by chnaging status from 1 to zero here : <a href ="/modComments">moderate blog comments</a><br>
-	Also you can change password here:<a href ="/adminRSPW">chnage admin password </a><br>
-		
-    Please note the above pages have restricted access & can only be accessed by admin, after logging in.		
-    Also might be an idea to make a note of the relative url since its more secure to not overly adverstise 
-    links 
+     
+     While logged in you can access the relative url /admin here: <a href ="/admin">admin </a> 
+     to do tasks such as :<br>
+     
+       
+	Submit a new blog <br>
+   Moderate blog comments by changing status from 1 to zero.<br>
+	Change admin  password 
     
 
 
